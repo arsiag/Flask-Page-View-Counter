@@ -5,7 +5,7 @@ app.secret_key = 'ThisIsCount'
 
 @app.route('/')
 def index():
-    if not session['count']:
+    if not session.get('count'):
         session['count'] = 0
     session['count'] += 1
     return render_template('counter.html')
